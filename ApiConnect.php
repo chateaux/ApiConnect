@@ -12,21 +12,19 @@ use Zend\Http\Request;
 class ApiConnect
 {
 
-    public	$url_auth				= "";
-    public	$url_api	= "";
-    public	$params		= [];
+    public	$url_auth   = "";
+    public	$url_api    = "";
+    public	$params     = [];
     public 	$client		= "";
-    public  $response		= "";
-    public  $orderObject;
-
+    public  $response   = "";
 
     function connect( ) {
 
         /**
          * Set the auth URL and the LotteryDataApi url's
          */
-        $url_auth = "http://cloud-staging.gamblingtec.com/oauth";
-        $url_api  = "http://cloud-staging.gamblingtec.com/api/rpc/lottery";
+        $url_auth = "http://your-api-location.com/oauth";
+        $url_api  = "http://your-api-location/api/rpc/dosomething";
 
 
         /**
@@ -37,7 +35,6 @@ class ApiConnect
          * Here is a basic session class: https://github.com/chateaux/Zf2SessionStorage
          *
          */
-
 
         //Run checks to check for a pre-existing token
 
