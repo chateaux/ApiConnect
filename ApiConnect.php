@@ -126,38 +126,38 @@ class ApiConnect
 
         $success = $responseArray['data']['success'];
         $message = $responseArray['data']['reason'];
-        $lotteryData = $responseArray['data']['lottery'];
+        $lotteryData = $responseArray['data']['specific-data'];
 
         if ($success) echo "success!<br/>";
 
         if (!$success) echo "Failed with response ".$message."<br/>";
 
-        foreach ($lotteryData AS $data)
+        foreach ($specificData AS $data)
         {
             /**
              * Check if the required arrays exist
              */
 
-            if ( ! isset( $data['games'] )  )
+            if ( ! isset( $data['some-data'] )  )
             {
                 //Skip this iteration
                 echo "Skipping due to missing games data...<br/>";
                 continue;
             }
 
-            if ( ! isset( $data['games-parent'] )  )
+            if ( ! isset( $data['some-other-data'] )  )
             {
                 //Skip this iteration
-                echo "Skipping due to missing games-parent data...<br/>";
+                echo "Skipping due to missing some other data...<br/>";
                 //continue;
             }
 
-            $games = $data['games'];
-            $games_parent = $data['games-parent'];
+            $games = $data['some data'];
+            $games_parent = $data['some other data'];
 
             foreach ($games AS $game)
             {
-                echo "Building... ".$game['game_name']." a game based on: ".$games_parent['lottery']['lot_name']."<br/>";
+                echo "Building... ".$game['some_name']." a game based on: ".$games_parent['some other daya']['name']."<br/>";
             }
 
 
